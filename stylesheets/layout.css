@@ -41,3 +41,26 @@ h2 + img { margin-top: 82px;
 }
 h3 + img { margin-top: 81px;
 }
+ul li {
+  list-style-type: disc;
+  margin-left: 22px;
+}
+/* Вариант 1 */
+/* blockquote {
+  border-left: 3px solid black;
+  padding-left: 17px;
+  padding-right: 20px;
+} */
+blockquote {
+  position: relative;
+}
+blockquote::before {
+  content: '';
+  background: black;
+  width: 3px;
+  height: 100%;
+  display: block;
+  position: absolute;
+  left: -20px;
+  top: 0;
+}
