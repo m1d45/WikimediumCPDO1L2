@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -9,7 +12,7 @@ h1, h2, h3, p, ul, blockquote, hr { width: 700px; margin: 0 auto;
 }
 h1, h2, h3 { font-family: 'PT Sans Caption', sans-serif; font-weight: bold;
 }
-h1 { margin-top: 67px; font-size: 38px; line-height: 45px;
+h1 { margin-top: 97px; font-size: 38px; line-height: 45px;
 }
 h1 + p { margin-top: 8px; font-family: 'PT Sans Caption', sans-serif; font-size: 22px; line-height: 32px; color: rgba(0,0,0,.4);
 }
@@ -63,4 +66,39 @@ blockquote::before {
   position: absolute;
   left: -20px;
   top: 0;
+}
+
+.menubar {
+  position: fixed;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  border-bottom: 1px solid #bbb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 0 20px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,.15);
+  /* background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(10px); */
+  z-index: 1;
+
+}
+.menubar img {
+  height: 20px;
+  margin: 0;
+  width: auto;
+}
+.menubar span a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #999;
+  margin-left: 30px;
+  transition: color 2s ease;
+}
+.menubar span a:hover {
+  color: black;
+  transition: color .4s ease;
 }
