@@ -4,7 +4,7 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'PT Sans', Helvetica, Arial, sans-serif;
 }
 a { color: inherit;
 }
@@ -101,4 +101,54 @@ blockquote::before {
 .menubar span a:hover {
   color: black;
   transition: color .4s ease;
+}
+.menubtn {
+  text-decoration: none;
+  font-size: 50px;
+  display: none;
+}
+.leftmenu {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  top: 60px;
+  padding: 20px;
+  background: white;
+  z-index: 10;
+  right: -200px;
+  transition: right .5s ease;
+}
+.leftmenu a {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.leftmenu:hover,
+.menubtn:hover ~ .leftmenu {
+  right: 0px;
+}
+.textcheck {
+  position: absolute;
+  top: 100px;
+  width: 1000px;
+  height: 400px;
+  background: red;
+  display: block;
+  z-index: 100;
+  opacity: 0;
+}
+.textcheck + label {
+  position: absolute;
+  top: 100px;
+  width: 1000px;
+  height: 400px;
+  background: red;
+  display: block;
+}
+
+input:checked + label {
+  background: blue;
+}
+.textcheck:checked {
+  height: 10000px;
 }

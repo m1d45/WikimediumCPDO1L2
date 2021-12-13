@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style media="screen">
+
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .block {
+        width: 300px;
+        height: 300px;
+        display: block;
+        background: green;
+        padding: 30px 40px;
+        color: white;
+        transition: background 2s;
+        font-size: 3vw;
+      }
+      .block p {
+        font-size: 1em;
+
+      }
+
+      .block2 {
+        background: black;
+        width: 100%;
+        position: fixed;
+      }
+      .box {
+        width: 600px;
+        position: relative;
+      }
+
+      @media all and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+        .block {
+          background: red;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="box">
+
+      <div class="block">
+        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+      </div>
+
+      <div class="block block2">
+      </div>
+    </div>
+
+
+  </body>
+</html>
