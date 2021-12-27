@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('.ctrl-btn').click(function(){
+        $('div.active').removeClass('active');
+        $(this).addClass('active');
+      });
+      $('.cell').click(function(){
+        if ($('.x').hasClass('active')) {
+          if ($(this).hasClass('cell_o')) {
+            $(this).addClass('red');
+            setTimeout(function(){
+              $(this).removeClass('red');
+            },200)
+          }
+          else {
+            $(this).addClass('cell_x');
+          }
+        }
+        else {
+          $(this).addClass('cell_o');
+        }
+        setTimeout(function() {
+          $('.x, .o').toggleClass('active');
+        }, 1);
+      })
+
+    });
+
+    </script>
+    <style media="screen">
+      .cell {
+        display: inline-block;
+        position: relative;
+        width: 50%;
+        height: 200px;
+        background: grey;
+        /* padding-bottom: 30%; */
+        margin: 10px;
+        transition: all 1.2s ease;
+        line-height: 200px;
+        font-size: 100px;
+        vertical-align: top;
+        text-align: center;
+      }
+      .row {
+        display: block;
+        position: relative;
+      }
+      .ctrl-btn {
+        display: inline-block;
+        position: relative;
+        width: 300px;
+        font-size: 30px;
+        text-align: center;
+        background: grey;
+        border: 1px solid black;
+        border-radius: 5px;
+        margin: 10px;
+      }
+      .active {
+        color: white;
+        background: black
+      }
+
+      .red {
+        background: red;
+        animation: colors 6s linear infinite;
+        animation-play-state: paused;
+      }
+      .animation-control {
+        animation-play-state: running;
+
+      }
+      .blue {
+        background: blue;
+      }
+      .green {
+        background: green;
+      }
+      .rounder {
+        border-radius: 30%;
+      }
+      .black {
+        background: black;
+      }
+      .hidden {
+        opacity: 0;
+      }
+      .orange {
+        background: orange;
+      }
+      @keyframes colors {
+        0% {background: red}
+        25% {background: blue}
+        50% {background: green}
+        75% {background: yellow}
+        100% {background: red};
+      }
+      .cell_x::after {
+        content: 'X';
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: black;
+        width: 200px;
+        height: 200px;
+        display: block;
+      }
+      .cell_o::after {
+        content: 'O';
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: black;
+        width: 200px;
+        height: 200px;
+        display: block;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+    </div>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+    </div>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+    </div>
+    <div class="contlos">
+      <div class="ctrl-btn x active">
+        X
+      </div>
+      <div class="ctrl-btn o">
+        O
+      </div>
+
+    </div>
+
+
+  </body>
+  <script type="text/javascript">
+  // $('.block').css('background', 'red');
+
+  </script>
+</html>
